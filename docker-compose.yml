@@ -1,0 +1,15 @@
+services:
+  uvicorn:
+    build: .
+    ports:
+      - "8666:8666" # Uvicorn
+    volumes:
+      - .:/app
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+    environment:
+      - PYTHONPATH=/app
+    command: >
+      sh -c ". /venv/bin/activate && uvicorn main:app"
+    restart: unless-stopped
+    mem_limit: 1g # Ограничение памяти
