@@ -5,12 +5,16 @@
     "description": "Отправляет клики на локальный сервер",
     "permissions": [
         "scripting",
-        "activeTab"
+        "activeTab",
+        "tabs"
     ],
     "host_permissions": [
         "http://127.0.0.1:8000/*",
         "http://localhost:8000/*"
     ],
+    "background": {
+        "service_worker": "background.js"
+    },
     "content_scripts": [
         {
             "matches": [
@@ -19,8 +23,7 @@
             "js": [
                 "content.js"
             ],
-            "run_at": "document_idle"
+            "run_at": "document_start"
         }
-    ],
-    "icons": {}
+    ]
 }
