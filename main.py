@@ -42,6 +42,7 @@ class ClickEvent(BaseModel):
     page_title: Optional[str] = None
     timestamp: Optional[str] = None
     mechanism: Optional[str] = None
+    user_login: Optional[str] = None  # новое поле для логина
 
 
 # Инициализация БД
@@ -57,7 +58,8 @@ async def init_db():
                 page_title TEXT,
                 mechanism TEXT,
                 timestamp TIMESTAMP,
-                client_id TEXT
+                client_id TEXT,
+                user_login TEXT  -- новый столбец
             )
         """)
     return pool
@@ -99,8 +101,8 @@ async def receive_click(event: ClickEvent, request: Request):
         async with app.state.db_pool.acquire() as conn:
             await conn.execute(
                 """
-                INSERT INTO clicks (url, text, page_url, page_title, mechanism, timestamp, client_id)
-                VALUES ($1, $2, $3, $4, $5, $6, $7)
+                INSERT INTO clicks (url, text, page_url, page_title, mechanism, timestamp, client_id, user_login)
+                VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
                 """,
                 event.url,
                 event.text,
@@ -108,7 +110,8 @@ async def receive_click(event: ClickEvent, request: Request):
                 event.page_title,
                 event.mechanism,
                 ts,
-                CLIENT_ID
+                CLIENT_ID,
+                event.user_login  # передаём логин
             )
     except Exception as e:
         import traceback

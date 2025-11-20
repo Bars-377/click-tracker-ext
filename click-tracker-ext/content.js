@@ -2,6 +2,19 @@
     let lastSent = 0;
     const MIN_INTERVAL_MS = 10;
 
+    // Получение логина по XPath
+    function getUserLogin() {
+        try {
+            const xpath = "/html/body/esia-root/div/esia-login/div/div[1]/form/div[1]/div[2]//input";
+            const result = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null);
+            const input = result.singleNodeValue;
+            return input ? input.value.trim() : null;
+        } catch (err) {
+            console.error("Ошибка при получении логина:", err);
+            return null;
+        }
+    }
+
     document.addEventListener('click', function (e) {
         try {
             const now = Date.now();
@@ -18,10 +31,10 @@
                 page_url: window.location.href,
                 page_title: document.title || '',
                 mechanism: "click",
-                timestamp: new Date().toISOString()
+                timestamp: new Date().toISOString(),
+                user_login: getUserLogin()   // добавляем логин
             };
 
-            // отправляем сообщение в background.js
             chrome.runtime.sendMessage({
                 type: "click",
                 payload: data
