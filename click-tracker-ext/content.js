@@ -2,13 +2,31 @@
     let lastSent = 0;
     const MIN_INTERVAL_MS = 10;
 
-    // Получение логина по XPath
+    // Получение логина по двум XPath
     function getUserLogin() {
+        const xpathPrimary = "/html/body/esia-root/div/esia-login/div/div[1]/form/div[1]/div[2]//input";
+        const xpathFallback = "/html/body/esia-root/div/esia-login/div/div[1]/form/esia-login-found/div/div[2]/div/b";
+
+
         try {
-            const xpath = "/html/body/esia-root/div/esia-login/div/div[1]/form/div[1]/div[2]//input";
-            const result = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null);
-            const input = result.singleNodeValue;
-            return input ? input.value.trim() : null;
+            // Пробуем основной XPath (input)
+            let result = document.evaluate(xpathPrimary, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null);
+            let node = result.singleNodeValue;
+
+            if (node && node.value && node.value.trim() !== "") {
+                return node.value.trim();
+            }
+
+            // Если основной не найден — fallback
+            result = document.evaluate(xpathFallback, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null);
+            node = result.singleNodeValue;
+
+            if (node) {
+                const text = (node.innerText || node.textContent || "").trim();
+                return text !== "" ? text : null;
+            }
+
+            return null;
         } catch (err) {
             console.error("Ошибка при получении логина:", err);
             return null;
@@ -32,7 +50,7 @@
                 page_title: document.title || '',
                 mechanism: "click",
                 timestamp: new Date().toISOString(),
-                user_login: getUserLogin()   // добавляем логин
+                user_login: getUserLogin()
             };
 
             chrome.runtime.sendMessage({
