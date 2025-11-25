@@ -1,4 +1,4 @@
-const API_URL = "http://127.0.0.1:8000/click";
+const API_URL = "http://127.0.0.1:8111/click";
 
 chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
     if (msg.type === "click") {

