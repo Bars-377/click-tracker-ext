@@ -4,7 +4,6 @@
 
 1. Создать виртуальное окружение:
 
-         py -3.12 -m venv venv
          python -m venv venv
 
 2. Запустить виртуальное окружение:
@@ -15,7 +14,7 @@
 
    Стандартный запуск:
 
-         mitmproxy --listen-port 8080 -s save_clicks.py
+         py main.py
 
 ## Дополнительно:
 
@@ -31,6 +30,5 @@ PowerShell:
 
       python -m pip freeze | ForEach-Object { python -m pip uninstall -y $_ }
 
-Nuitka:
-      python -m nuitka --onefile --windows-disable-console --mingw64 --lto=yes main.py
-      python -m nuitka --onefile --windows-console-mode=disable main.py
+Необходимое расширение для Chrome:
+      Click&Clean - https://chromewebstore.google.com/detail/clickclean/ghgabhipcejejjmhhchfonmamedcbeod?hl=ru

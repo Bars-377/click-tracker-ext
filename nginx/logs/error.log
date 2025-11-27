@@ -1,0 +1,1 @@
+2025/11/27 10:49:16 [error] 7540#11900: *3 CreateFile() "C:/nginx/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "https://localhost/crx/update.xml"
