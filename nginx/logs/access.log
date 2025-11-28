@@ -1,3 +1,0 @@
-127.0.0.1 - - [27/Nov/2025:10:49:16 +0700] "GET /crx/update.xml HTTP/1.1" 200 272 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
-127.0.0.1 - - [27/Nov/2025:10:49:16 +0700] "GET /favicon.ico HTTP/1.1" 404 555 "https://localhost/crx/update.xml" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
-127.0.0.1 - - [27/Nov/2025:10:50:44 +0700] "GET /crx/update.xml HTTP/1.1" 200 272 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
