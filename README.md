@@ -31,4 +31,9 @@ PowerShell:
       python -m pip freeze | ForEach-Object { python -m pip uninstall -y $_ }
 
 Необходимое расширение для Chrome:
+
       Click&Clean - https://chromewebstore.google.com/detail/clickclean/ghgabhipcejejjmhhchfonmamedcbeod?hl=ru
+
+pyinstaller:
+
+      pyinstaller --noconsole --onefile main.py

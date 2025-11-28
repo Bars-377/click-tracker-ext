@@ -9,7 +9,21 @@ from pydantic import BaseModel, Field
 import uvicorn
 
 # --- Загрузка конфигурации ---
-with open("config.json", "r") as f:
+import os
+import sys
+
+# --- Определяем базовую директорию ---
+if getattr(sys, 'frozen', False):
+    # Когда запущено как exe
+    base_dir = os.path.dirname(sys.executable)
+else:
+    # Когда запущено как скрипт
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+
+config_path = os.path.join(base_dir, "config.json")
+
+# --- Загружаем конфиг ---
+with open(config_path, "r", encoding="utf-8") as f:
     config = json.load(f)
 
 DB_CONFIG = config["db"]
@@ -122,5 +136,28 @@ async def receive_click(event: ClickEvent, request: Request):
     return {"status": "ok", "client_id": CLIENT_ID}
 
 
+import logging
+from logging.handlers import RotatingFileHandler
+
+
+# --- Настройка логов ---
+log_file = os.path.join(base_dir, "uvicorn.log")
+
+# Если sys.stdout/stderr равны None, создаём свои
+if sys.stdout is None:
+    sys.stdout = open(log_file, "a", encoding="utf-8")
+if sys.stderr is None:
+    sys.stderr = open(log_file, "a", encoding="utf-8")
+
+logger = logging.getLogger("uvicorn")
+logger.setLevel(logging.INFO)
+
+# Файл для логов с ротацией
+file_handler = RotatingFileHandler(log_file, maxBytes=5*1024*1024, backupCount=2)
+formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
+file_handler.setFormatter(formatter)
+logger.addHandler(file_handler)
+
+
 if __name__ == "__main__":
-    uvicorn.run(app, host=HOST, port=PORT, log_level="info")
+    uvicorn.run(app, host=HOST, port=PORT, log_config=None, access_log=False)
