@@ -2,3 +2,71 @@
 2025-11-28 16:30:51,629 - INFO - Waiting for application startup.
 2025-11-28 16:30:51,667 - INFO - Application startup complete.
 2025-11-28 16:30:51,668 - INFO - Uvicorn running on http://0.0.0.0:8111 (Press CTRL+C to quit)
+2025-12-01 11:34:25,167 - INFO - Started server process [14900]
+2025-12-01 11:34:25,168 - INFO - Waiting for application startup.
+2025-12-01 11:34:25,210 - INFO - Application startup complete.
+2025-12-01 11:34:25,211 - INFO - Uvicorn running on http://0.0.0.0:8111 (Press CTRL+C to quit)
+2025-12-01 11:41:24,560 - INFO - Started server process [7676]
+2025-12-01 11:41:24,560 - INFO - Waiting for application startup.
+2025-12-01 11:41:24,614 - INFO - Application startup complete.
+2025-12-01 11:41:24,614 - INFO - Uvicorn running on http://0.0.0.0:8111 (Press CTRL+C to quit)
+2025-12-01 11:42:59,686 - INFO - Started server process [8680]
+2025-12-01 11:42:59,687 - INFO - Waiting for application startup.
+2025-12-01 11:42:59,723 - INFO - Application startup complete.
+2025-12-01 11:42:59,724 - INFO - Uvicorn running on http://0.0.0.0:8111 (Press CTRL+C to quit)
+2025-12-01 11:45:15,935 - INFO - Started server process [4128]
+2025-12-01 11:45:15,936 - INFO - Waiting for application startup.
+2025-12-01 11:45:15,978 - INFO - Application startup complete.
+2025-12-01 11:45:15,979 - INFO - Uvicorn running on http://0.0.0.0:8111 (Press CTRL+C to quit)
+2025-12-01 11:49:01,898 - INFO - Started server process [13392]
+2025-12-01 11:49:01,899 - INFO - Waiting for application startup.
+2025-12-01 11:49:01,937 - INFO - Application startup complete.
+2025-12-01 11:49:01,937 - INFO - Uvicorn running on http://0.0.0.0:8111 (Press CTRL+C to quit)
+2025-12-01 11:49:47,689 - INFO - Started server process [9712]
+2025-12-01 11:49:47,690 - INFO - Waiting for application startup.
+2025-12-01 11:49:47,744 - INFO - Application startup complete.
+2025-12-01 11:49:47,744 - INFO - Uvicorn running on http://0.0.0.0:8111 (Press CTRL+C to quit)
+2025-12-01 11:50:07,683 - INFO - Started server process [9660]
+2025-12-01 11:50:07,683 - INFO - Waiting for application startup.
+2025-12-01 11:50:07,972 - INFO - Application startup complete.
+2025-12-01 11:50:07,973 - ERROR - [Errno 10048] error while attempting to bind on address ('0.0.0.0', 8111): обычно разрешается только одно использование адреса сокета (протокол/сетевой адрес/порт)
+2025-12-01 11:50:07,973 - INFO - Waiting for application shutdown.
+2025-12-01 11:50:07,977 - INFO - Application shutdown complete.
+Connected to DB, client_id=321
+DB pool closed
+2025-12-01 11:50:08,577 - INFO - Started server process [15736]
+2025-12-01 11:50:08,577 - INFO - Waiting for application startup.
+2025-12-01 11:50:08,634 - INFO - Application startup complete.
+2025-12-01 11:50:08,634 - ERROR - [Errno 10048] error while attempting to bind on address ('0.0.0.0', 8111): обычно разрешается только одно использование адреса сокета (протокол/сетевой адрес/порт)
+2025-12-01 11:50:08,634 - INFO - Waiting for application shutdown.
+2025-12-01 11:50:08,640 - INFO - Application shutdown complete.
+Connected to DB, client_id=321
+DB pool closed
+2025-12-01 11:50:09,362 - INFO - Started server process [15236]
+2025-12-01 11:50:09,362 - INFO - Waiting for application startup.
+2025-12-01 11:50:09,400 - INFO - Application startup complete.
+2025-12-01 11:50:09,400 - ERROR - [Errno 10048] error while attempting to bind on address ('0.0.0.0', 8111): обычно разрешается только одно использование адреса сокета (протокол/сетевой адрес/порт)
+2025-12-01 11:50:09,400 - INFO - Waiting for application shutdown.
+2025-12-01 11:50:09,404 - INFO - Application shutdown complete.
+Connected to DB, client_id=321
+DB pool closed
+2025-12-01 11:50:09,987 - INFO - Started server process [9744]
+2025-12-01 11:50:09,987 - INFO - Waiting for application startup.
+2025-12-01 11:50:10,026 - INFO - Application startup complete.
+2025-12-01 11:50:10,027 - ERROR - [Errno 10048] error while attempting to bind on address ('0.0.0.0', 8111): обычно разрешается только одно использование адреса сокета (протокол/сетевой адрес/порт)
+2025-12-01 11:50:10,027 - INFO - Waiting for application shutdown.
+2025-12-01 11:50:10,032 - INFO - Application shutdown complete.
+Connected to DB, client_id=321
+DB pool closed
+2025-12-01 11:52:42,406 - INFO - Started server process [14432]
+2025-12-01 11:52:42,407 - INFO - Waiting for application startup.
+2025-12-01 11:52:42,445 - INFO - Application startup complete.
+2025-12-01 11:52:42,445 - INFO - Uvicorn running on http://0.0.0.0:8111 (Press CTRL+C to quit)
+2025-12-01 11:54:03,475 - INFO - Started server process [14828]
+2025-12-01 11:54:03,476 - INFO - Waiting for application startup.
+2025-12-01 11:54:03,530 - INFO - Application startup complete.
+2025-12-01 11:54:03,531 - INFO - Uvicorn running on http://0.0.0.0:8111 (Press CTRL+C to quit)
+2025-12-01 11:55:48,587 - INFO - Started server process [13496]
+2025-12-01 11:55:48,587 - INFO - Waiting for application startup.
+2025-12-01 11:55:48,625 - INFO - Application startup complete.
+2025-12-01 11:55:48,625 - INFO - Uvicorn running on http://0.0.0.0:8111 (Press CTRL+C to quit)
