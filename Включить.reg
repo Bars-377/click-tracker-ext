@@ -1,5 +1,0 @@
-Windows Registry Editor Version 5.00
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\ExtensionInstallForcelist]
-"1"="ledggldinlinanhodnegaaimjobniidg;file:///C:/ChromeExt/click-tracker-ext.crx"
-"2"="ghgabhipcejejjmhhchfonmamedcbeod;https://clients2.google.com/service/update2/crx"
