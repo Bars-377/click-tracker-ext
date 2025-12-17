@@ -102,3 +102,197 @@ DB pool closed
 2025-12-05 14:49:31,613 - INFO - Waiting for application startup.
 2025-12-05 14:49:31,654 - INFO - Application startup complete.
 2025-12-05 14:49:31,654 - INFO - Uvicorn running on http://0.0.0.0:8111 (Press CTRL+C to quit)
+2025-12-17 13:45:33,728 - INFO - Started server process [16216]
+2025-12-17 13:45:33,729 - INFO - Waiting for application startup.
+2025-12-17 13:45:33,803 - INFO - Application startup complete.
+2025-12-17 13:45:33,804 - INFO - Uvicorn running on http://127.0.0.1:8111 (Press CTRL+C to quit)
+2025-12-17 13:45:52,758 - INFO - Started server process [14832]
+2025-12-17 13:45:52,758 - INFO - Waiting for application startup.
+2025-12-17 13:45:52,797 - INFO - Application startup complete.
+2025-12-17 13:45:52,798 - ERROR - [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8111): обычно разрешается только одно использование адреса сокета (протокол/сетевой адрес/порт)
+2025-12-17 13:45:52,798 - INFO - Waiting for application shutdown.
+2025-12-17 13:45:52,802 - INFO - Application shutdown complete.
+Connected to DB, client_id=321
+DB pool closed
+2025-12-17 13:46:01,244 - INFO - Started server process [8168]
+2025-12-17 13:46:01,245 - INFO - Waiting for application startup.
+2025-12-17 13:46:01,319 - INFO - Application startup complete.
+2025-12-17 13:46:01,319 - ERROR - [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8111): обычно разрешается только одно использование адреса сокета (протокол/сетевой адрес/порт)
+2025-12-17 13:46:01,319 - INFO - Waiting for application shutdown.
+2025-12-17 13:46:01,324 - INFO - Application shutdown complete.
+Connected to DB, client_id=321
+DB pool closed
+2025-12-17 13:46:03,113 - INFO - Started server process [11256]
+2025-12-17 13:46:03,113 - INFO - Waiting for application startup.
+2025-12-17 13:46:03,150 - INFO - Application startup complete.
+2025-12-17 13:46:03,150 - ERROR - [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8111): обычно разрешается только одно использование адреса сокета (протокол/сетевой адрес/порт)
+2025-12-17 13:46:03,150 - INFO - Waiting for application shutdown.
+2025-12-17 13:46:03,155 - INFO - Application shutdown complete.
+Connected to DB, client_id=321
+DB pool closed
+2025-12-17 13:46:05,783 - INFO - Started server process [13424]
+2025-12-17 13:46:05,783 - INFO - Waiting for application startup.
+2025-12-17 13:46:05,822 - INFO - Application startup complete.
+2025-12-17 13:46:05,822 - ERROR - [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8111): обычно разрешается только одно использование адреса сокета (протокол/сетевой адрес/порт)
+2025-12-17 13:46:05,823 - INFO - Waiting for application shutdown.
+2025-12-17 13:46:05,828 - INFO - Application shutdown complete.
+Connected to DB, client_id=321
+DB pool closed
+2025-12-17 13:46:09,241 - INFO - Started server process [13740]
+2025-12-17 13:46:09,241 - INFO - Waiting for application startup.
+2025-12-17 13:46:09,280 - INFO - Application startup complete.
+2025-12-17 13:46:09,280 - ERROR - [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8111): обычно разрешается только одно использование адреса сокета (протокол/сетевой адрес/порт)
+2025-12-17 13:46:09,280 - INFO - Waiting for application shutdown.
+2025-12-17 13:46:09,285 - INFO - Application shutdown complete.
+Connected to DB, client_id=321
+DB pool closed
+2025-12-17 13:46:11,919 - INFO - Started server process [15364]
+2025-12-17 13:46:11,919 - INFO - Waiting for application startup.
+2025-12-17 13:46:11,957 - INFO - Application startup complete.
+2025-12-17 13:46:11,958 - ERROR - [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8111): обычно разрешается только одно использование адреса сокета (протокол/сетевой адрес/порт)
+2025-12-17 13:46:11,958 - INFO - Waiting for application shutdown.
+2025-12-17 13:46:11,962 - INFO - Application shutdown complete.
+Connected to DB, client_id=321
+DB pool closed
+2025-12-17 13:46:15,413 - INFO - Started server process [12384]
+2025-12-17 13:46:15,414 - INFO - Waiting for application startup.
+2025-12-17 13:46:15,450 - INFO - Application startup complete.
+2025-12-17 13:46:15,451 - ERROR - [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8111): обычно разрешается только одно использование адреса сокета (протокол/сетевой адрес/порт)
+2025-12-17 13:46:15,451 - INFO - Waiting for application shutdown.
+2025-12-17 13:46:15,455 - INFO - Application shutdown complete.
+Connected to DB, client_id=321
+DB pool closed
+2025-12-17 13:46:18,287 - INFO - Started server process [10536]
+2025-12-17 13:46:18,287 - INFO - Waiting for application startup.
+2025-12-17 13:46:18,325 - INFO - Application startup complete.
+2025-12-17 13:46:18,325 - ERROR - [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8111): обычно разрешается только одно использование адреса сокета (протокол/сетевой адрес/порт)
+2025-12-17 13:46:18,326 - INFO - Waiting for application shutdown.
+2025-12-17 13:46:18,331 - INFO - Application shutdown complete.
+Connected to DB, client_id=321
+DB pool closed
+2025-12-17 13:46:21,117 - INFO - Started server process [10392]
+2025-12-17 13:46:21,117 - INFO - Waiting for application startup.
+2025-12-17 13:46:21,154 - INFO - Application startup complete.
+2025-12-17 13:46:21,155 - ERROR - [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8111): обычно разрешается только одно использование адреса сокета (протокол/сетевой адрес/порт)
+2025-12-17 13:46:21,155 - INFO - Waiting for application shutdown.
+2025-12-17 13:46:21,159 - INFO - Application shutdown complete.
+Connected to DB, client_id=321
+DB pool closed
+2025-12-17 13:46:24,641 - INFO - Started server process [14884]
+2025-12-17 13:46:24,641 - INFO - Waiting for application startup.
+2025-12-17 13:46:24,714 - INFO - Application startup complete.
+2025-12-17 13:46:24,714 - ERROR - [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8111): обычно разрешается только одно использование адреса сокета (протокол/сетевой адрес/порт)
+2025-12-17 13:46:24,714 - INFO - Waiting for application shutdown.
+2025-12-17 13:46:24,719 - INFO - Application shutdown complete.
+Connected to DB, client_id=321
+DB pool closed
+2025-12-17 13:46:27,917 - INFO - Started server process [6520]
+2025-12-17 13:46:27,918 - INFO - Waiting for application startup.
+2025-12-17 13:46:27,955 - INFO - Application startup complete.
+2025-12-17 13:46:27,955 - ERROR - [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8111): обычно разрешается только одно использование адреса сокета (протокол/сетевой адрес/порт)
+2025-12-17 13:46:27,955 - INFO - Waiting for application shutdown.
+2025-12-17 13:46:27,960 - INFO - Application shutdown complete.
+Connected to DB, client_id=321
+DB pool closed
+2025-12-17 13:46:31,037 - INFO - Started server process [14920]
+2025-12-17 13:46:31,038 - INFO - Waiting for application startup.
+2025-12-17 13:46:31,074 - INFO - Application startup complete.
+2025-12-17 13:46:31,074 - ERROR - [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8111): обычно разрешается только одно использование адреса сокета (протокол/сетевой адрес/порт)
+2025-12-17 13:46:31,074 - INFO - Waiting for application shutdown.
+2025-12-17 13:46:31,079 - INFO - Application shutdown complete.
+Connected to DB, client_id=321
+DB pool closed
+2025-12-17 13:46:33,531 - INFO - Started server process [15228]
+2025-12-17 13:46:33,531 - INFO - Waiting for application startup.
+2025-12-17 13:46:33,568 - INFO - Application startup complete.
+2025-12-17 13:46:33,569 - ERROR - [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8111): обычно разрешается только одно использование адреса сокета (протокол/сетевой адрес/порт)
+2025-12-17 13:46:33,569 - INFO - Waiting for application shutdown.
+2025-12-17 13:46:33,573 - INFO - Application shutdown complete.
+Connected to DB, client_id=321
+DB pool closed
+2025-12-17 13:46:36,720 - INFO - Started server process [14240]
+2025-12-17 13:46:36,720 - INFO - Waiting for application startup.
+2025-12-17 13:46:36,757 - INFO - Application startup complete.
+2025-12-17 13:46:36,758 - ERROR - [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8111): обычно разрешается только одно использование адреса сокета (протокол/сетевой адрес/порт)
+2025-12-17 13:46:36,758 - INFO - Waiting for application shutdown.
+2025-12-17 13:46:36,763 - INFO - Application shutdown complete.
+Connected to DB, client_id=321
+DB pool closed
+2025-12-17 13:46:40,235 - INFO - Started server process [4048]
+2025-12-17 13:46:40,235 - INFO - Waiting for application startup.
+2025-12-17 13:46:40,271 - INFO - Application startup complete.
+2025-12-17 13:46:40,272 - ERROR - [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8111): обычно разрешается только одно использование адреса сокета (протокол/сетевой адрес/порт)
+2025-12-17 13:46:40,272 - INFO - Waiting for application shutdown.
+2025-12-17 13:46:40,276 - INFO - Application shutdown complete.
+Connected to DB, client_id=321
+DB pool closed
+2025-12-17 13:46:42,727 - INFO - Started server process [13916]
+2025-12-17 13:46:42,727 - INFO - Waiting for application startup.
+2025-12-17 13:46:42,766 - INFO - Application startup complete.
+2025-12-17 13:46:42,766 - ERROR - [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8111): обычно разрешается только одно использование адреса сокета (протокол/сетевой адрес/порт)
+2025-12-17 13:46:42,767 - INFO - Waiting for application shutdown.
+2025-12-17 13:46:42,771 - INFO - Application shutdown complete.
+Connected to DB, client_id=321
+DB pool closed
+2025-12-17 13:46:45,358 - INFO - Started server process [1932]
+2025-12-17 13:46:45,358 - INFO - Waiting for application startup.
+2025-12-17 13:46:45,431 - INFO - Application startup complete.
+2025-12-17 13:46:45,432 - ERROR - [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8111): обычно разрешается только одно использование адреса сокета (протокол/сетевой адрес/порт)
+2025-12-17 13:46:45,432 - INFO - Waiting for application shutdown.
+2025-12-17 13:46:45,436 - INFO - Application shutdown complete.
+Connected to DB, client_id=321
+DB pool closed
+2025-12-17 13:46:49,558 - INFO - Started server process [15840]
+2025-12-17 13:46:49,559 - INFO - Waiting for application startup.
+2025-12-17 13:46:49,597 - INFO - Application startup complete.
+2025-12-17 13:46:49,598 - ERROR - [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8111): обычно разрешается только одно использование адреса сокета (протокол/сетевой адрес/порт)
+2025-12-17 13:46:49,599 - INFO - Waiting for application shutdown.
+2025-12-17 13:46:49,603 - INFO - Application shutdown complete.
+Connected to DB, client_id=321
+DB pool closed
+2025-12-17 13:46:53,915 - INFO - Started server process [10584]
+2025-12-17 13:46:53,915 - INFO - Waiting for application startup.
+2025-12-17 13:46:53,952 - INFO - Application startup complete.
+2025-12-17 13:46:53,953 - ERROR - [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8111): обычно разрешается только одно использование адреса сокета (протокол/сетевой адрес/порт)
+2025-12-17 13:46:53,953 - INFO - Waiting for application shutdown.
+2025-12-17 13:46:53,957 - INFO - Application shutdown complete.
+Connected to DB, client_id=321
+DB pool closed
+2025-12-17 13:47:36,641 - INFO - Started server process [6224]
+2025-12-17 13:47:36,641 - INFO - Waiting for application startup.
+2025-12-17 13:47:36,679 - INFO - Application startup complete.
+2025-12-17 13:47:36,679 - ERROR - [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8111): обычно разрешается только одно использование адреса сокета (протокол/сетевой адрес/порт)
+2025-12-17 13:47:36,679 - INFO - Waiting for application shutdown.
+2025-12-17 13:47:36,684 - INFO - Application shutdown complete.
+2025-12-17 13:49:33,955 - INFO - Started server process [16084]
+2025-12-17 13:49:33,956 - INFO - Waiting for application startup.
+2025-12-17 13:49:34,027 - INFO - Application startup complete.
+2025-12-17 13:49:34,028 - ERROR - [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8111): обычно разрешается только одно использование адреса сокета (протокол/сетевой адрес/порт)
+2025-12-17 13:49:34,028 - INFO - Waiting for application shutdown.
+2025-12-17 13:49:34,033 - INFO - Application shutdown complete.
+2025-12-17 13:49:41,650 - INFO - Started server process [15396]
+2025-12-17 13:49:41,650 - INFO - Waiting for application startup.
+2025-12-17 13:49:41,688 - INFO - Application startup complete.
+2025-12-17 13:49:41,689 - ERROR - [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8111): обычно разрешается только одно использование адреса сокета (протокол/сетевой адрес/порт)
+2025-12-17 13:49:41,689 - INFO - Waiting for application shutdown.
+2025-12-17 13:49:41,694 - INFO - Application shutdown complete.
+2025-12-17 13:50:54,676 - INFO - Started server process [12992]
+2025-12-17 13:50:54,677 - INFO - Waiting for application startup.
+2025-12-17 13:50:54,716 - INFO - Application startup complete.
+2025-12-17 13:50:54,717 - ERROR - [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8111): обычно разрешается только одно использование адреса сокета (протокол/сетевой адрес/порт)
+2025-12-17 13:50:54,717 - INFO - Waiting for application shutdown.
+2025-12-17 13:50:54,722 - INFO - Application shutdown complete.
+2025-12-17 13:51:04,554 - INFO - Started server process [10360]
+2025-12-17 13:51:04,554 - INFO - Waiting for application startup.
+2025-12-17 13:51:04,594 - INFO - Application startup complete.
+2025-12-17 13:51:04,594 - ERROR - [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8111): обычно разрешается только одно использование адреса сокета (протокол/сетевой адрес/порт)
+2025-12-17 13:51:04,594 - INFO - Waiting for application shutdown.
+2025-12-17 13:51:04,599 - INFO - Application shutdown complete.
+2025-12-17 13:51:24,528 - INFO - Started server process [10180]
+2025-12-17 13:51:24,528 - INFO - Waiting for application startup.
+2025-12-17 13:51:24,772 - INFO - Application startup complete.
+2025-12-17 13:51:24,773 - INFO - Uvicorn running on http://127.0.0.1:8111 (Press CTRL+C to quit)
+2025-12-17 13:51:26,985 - INFO - Shutting down
+2025-12-17 13:51:27,085 - INFO - Waiting for application shutdown.
+2025-12-17 13:51:27,091 - INFO - Application shutdown complete.
+2025-12-17 13:51:27,091 - INFO - Finished server process [10180]

@@ -38,7 +38,10 @@ DB_DSN = (
     f"{DB_CONFIG['host']}:{DB_CONFIG['port']}/{DB_CONFIG['database']}"
 )
 
-app = FastAPI(title="Click Receiver")
+app = FastAPI(
+    title="Internal Event Service",
+    description="Corporate internal service. Not intended for public use."
+)
 
 # Разрешаем запросы с локального фронта
 app.add_middleware(
