@@ -2,7 +2,7 @@
 chcp 65001 >nul
 
 rem ---- Имя процесса без .exe ----
-set "PROC=main"
+set "PROC=Internal Event Receiver"
 
 tasklist /FI "IMAGENAME eq %PROC%.exe" | find /I "%PROC%.exe" >nul
 if %ERRORLEVEL%==0 (
