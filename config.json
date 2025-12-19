@@ -1,0 +1,14 @@
+{
+    "db": {
+        "user": "bot",
+        "password": "enigma1418",
+        "host": "172.18.11.104",
+        "port": 5432,
+        "database": "timesheet"
+    },
+    "server": {
+        "host": "127.0.0.1",
+        "port": 8111
+    },
+    "client_id": "321"
+}
