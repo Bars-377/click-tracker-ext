@@ -67,16 +67,17 @@ async def receive_click(event: ClickEvent, request: Request):
     if not event.url and not event.page_url:
         raise HTTPException(status_code=400, detail="No url/page_url provided")
 
-    ts = None
+    # --- Определяем реальное локальное время ---
     if event.timestamp:
         try:
-            ts = datetime.fromisoformat(event.timestamp.replace("Z", "+00:00"))
-            ts = ts.astimezone(timezone.utc).replace(tzinfo=None)
+            # Конвертируем ISO-время в datetime и приводим к локальному часовому поясу
+            ts = datetime.fromisoformat(event.timestamp.replace("Z", "+00:00")).astimezone()
         except Exception:
-            ts = datetime.utcnow()
+            ts = datetime.now()
     else:
-        ts = datetime.utcnow()
+        ts = datetime.now()
 
+    # --- Формируем SQL-запрос ---
     sql = f"""INSERT INTO clicks (url, text, page_url, page_title, mechanism, timestamp, client_id, user_login)
 VALUES (
     {sql_escape(event.url)},

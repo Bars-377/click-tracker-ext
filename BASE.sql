@@ -1,18 +1,17 @@
-CREATE TABLE "clicks" (
-	"id" SERIAL NOT NULL,
-	"url" TEXT NULL DEFAULT NULL,
-	"timestamp" TIMESTAMP NULL DEFAULT now(),
-	"text" TEXT NULL DEFAULT NULL,
-	"page_url" TEXT NULL DEFAULT NULL,
-	"page_title" TEXT NULL DEFAULT NULL,
-	"mechanism" TEXT NULL DEFAULT NULL,
-	PRIMARY KEY ("id")
-)
-;
-COMMENT ON COLUMN "clicks"."id" IS '';
-COMMENT ON COLUMN "clicks"."url" IS '';
-COMMENT ON COLUMN "clicks"."timestamp" IS '';
-COMMENT ON COLUMN "clicks"."text" IS '';
-COMMENT ON COLUMN "clicks"."page_url" IS '';
-COMMENT ON COLUMN "clicks"."page_title" IS '';
-COMMENT ON COLUMN "clicks"."mechanism" IS '';
+-- Создаём таблицу с уникальным ограничением сразу
+CREATE TABLE IF NOT EXISTS clicks (
+    id SERIAL PRIMARY KEY,          -- уникальный идентификатор
+    url TEXT,
+    text TEXT,
+    page_url TEXT,
+    page_title TEXT,
+    mechanism TEXT,
+    timestamp TIMESTAMP NOT NULL,
+    client_id TEXT,
+    user_login TEXT,
+    CONSTRAINT unique_click UNIQUE (page_url, timestamp, client_id)
+);
+
+-- Дополнительно создаём индекс для ускорения проверок уникальности
+CREATE UNIQUE INDEX IF NOT EXISTS unique_click_idx
+ON clicks(page_url, timestamp, client_id);
