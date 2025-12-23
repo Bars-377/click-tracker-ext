@@ -134,27 +134,22 @@ VALUES (
 );
 """
 
-    # --- Локально ---
-    try:
-        with open(SQL_FILE, "a", encoding="utf-8") as f:
-            f.write(sql + "\n")
-    except Exception as e:
-        logger.error(f"Ошибка записи локального файла: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
+    # # --- Локально ---
+    # try:
+    #     with open(SQL_FILE, "a", encoding="utf-8") as f:
+    #         f.write(sql + "\n")
+    # except Exception as e:
+    #     logger.error(f"Ошибка записи локального файла: {e}")
+    #     raise HTTPException(status_code=500, detail=str(e))
 
     # --- SMB ---
-    UNC_SHARE = r"\\172.18.10.210\mfcshare"
-    SUBDIR = "share"
-
+    UNC_SHARE = r"\\172.18.10.210\share-toma"
     USERNAME = r"share-toma"
     PASSWORD = r"zWS1JLp8R_u!Vl["
 
     connect_unc_with_retry(UNC_SHARE, USERNAME, PASSWORD)
 
-    target_dir = os.path.join(UNC_SHARE, SUBDIR)
-    os.makedirs(target_dir, exist_ok=True)
-
-    file_path = os.path.join(target_dir, f"clicks_{CLIENT_ID}.sql")
+    file_path = os.path.join(UNC_SHARE, f"clicks_{CLIENT_ID}.sql")
 
     try:
         with open(file_path, "a", encoding="utf-8") as f:
