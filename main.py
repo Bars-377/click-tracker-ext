@@ -62,6 +62,22 @@ def sql_escape(value: Optional[str]) -> str:
     # Экранируем одинарные кавычки для SQL
     return f"'{value.replace('\'', '\'\'')}'"
 
+def connect_unc(path, username, password):
+    net_resource = win32wnet.NETRESOURCE()
+    net_resource.dwType = win32netcon.RESOURCETYPE_DISK
+    net_resource.lpRemoteName = path
+
+    try:
+        win32wnet.WNetAddConnection2(
+            net_resource,
+            password,
+            username,
+            0
+        )
+    except Exception as e:
+        if "1219" not in str(e):
+            raise
+
 @app.post("/click")
 async def receive_click(event: ClickEvent, request: Request):
     if not event.url and not event.page_url:
@@ -99,48 +115,21 @@ VALUES (
         raise HTTPException(status_code=500, detail=str(e))
 
     # --- Сохраняем на SMB-шару ---
-    UNC_PATH = r"\\172.18.10.210\mfcshare\share"
+    UNC_SHARE = r"\\172.18.10.210\mfcshare"
+    SUBDIR = "share"
+
     USERNAME = r"share-toma"
     PASSWORD = r"zWS1JLp8R_u!Vl["
 
-    def connect_unc(path, username, password):
-        net_resource = win32wnet.NETRESOURCE()
-        net_resource.dwType = win32netcon.RESOURCETYPE_DISK
-        net_resource.lpRemoteName = path
+    connect_unc(UNC_SHARE, USERNAME, PASSWORD)
 
-        try:
-            win32wnet.WNetAddConnection2(
-                net_resource,
-                password,
-                username,
-                0
-            )
-        except Exception as e:
-            # Ошибка 1219 означает, что подключение уже существует
-            if "1219" not in str(e):
-                raise
+    target_dir = os.path.join(UNC_SHARE, SUBDIR)
+    os.makedirs(target_dir, exist_ok=True)
 
-    def disconnect_unc(path):
-        try:
-            win32wnet.WNetCancelConnection2(path, 0, True)
-        except Exception:
-            pass
+    file_path = os.path.join(target_dir, f"clicks_{CLIENT_ID}.sql")
 
-    connect_unc(UNC_PATH, USERNAME, PASSWORD)
-
-    if os.path.exists(UNC_PATH):
-        print(f"Папка существует: {UNC_PATH}")
-
-        file_path = os.path.join(UNC_PATH, f"clicks_{CLIENT_ID}.sql")
-        with open(file_path, "a", encoding="utf-8") as f:
-            f.write(sql + "\n")
-
-        print(f"Файл создан: {file_path}")
-    else:
-        print(f"Папка не найдена: {UNC_PATH}")
-
-    # при необходимости можно отключаться
-    # disconnect_unc(UNC_PATH)
+    with open(file_path, "a", encoding="utf-8") as f:
+        f.write(sql + "\n")
 
     return {"status": "ok", "client_id": CLIENT_ID}
 
