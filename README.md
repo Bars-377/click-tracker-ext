@@ -37,3 +37,7 @@ PowerShell:
 pyinstaller:
 
       pyinstaller --noconsole --onefile main.py
+
+User:
+
+      Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned -Force
