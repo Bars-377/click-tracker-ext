@@ -22,5 +22,8 @@ start "" %CHROME% --app=https://ej.sudrf.ru/ --start-maximized
 start "" %CHROME% --app=https://notariat70.ru/ --start-maximized
 start "" %CHROME% --app=https://notariat.ru/ru-ru/help/publichnye-reestry-inostrannyh-gosudarstv/ --start-maximized
 start "" %CHROME% --app=https://dom.gosuslugi.ru/ --start-maximized
+start "" %CHROME% --app=https://fssp.gov.ru/ --start-maximized
+start "" %CHROME% --app=https://bankrot.fedresurs.ru/?utm_referrer=https:%2F%2Fwww.google.com%2F/ --start-maximized
+start "" %CHROME% --app=https://historydepositarium.ru/ --start-maximized
 
 exit
