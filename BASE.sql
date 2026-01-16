@@ -11,9 +11,6 @@ CREATE TABLE clicks (
     user_login TEXT,
     timestamp_user TIMESTAMP,
     user_name TEXT,
-    CONSTRAINT unique_click UNIQUE (page_url, timestamp, client_id)
+    _hash VARCHAR(32),  -- добавляем колонку для MD5-хеша
+    UNIQUE (_hash)
 );
-
--- Дополнительно создаём индекс для ускорения проверок уникальности
-CREATE UNIQUE INDEX IF NOT EXISTS unique_click_idx
-ON clicks(page_url, timestamp, client_id);

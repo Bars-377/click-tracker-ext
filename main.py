@@ -150,20 +150,10 @@ async def receive_click(event: ClickEvent, request: Request):
         ts = datetime.now()
 
     sql = f"""
-INSERT INTO clicks (
-    url,
-    text,
-    page_url,
-    page_title,
-    mechanism,
-    timestamp,
-    client_id,
-    user_login,
-    timestamp_user,
-    user_name
-) VALUES (
+INSERT INTO clicks (url, text, page_url, page_title, mechanism, timestamp, client_id, user_login, timestamp_user, user_name)
+VALUES (
     {sql_escape(event.url)},
-    {sql_escape(event.text)},
+    {sql_escape(event.text[:80] if event.text else None)},
     {sql_escape(event.page_url)},
     {sql_escape(event.page_title)},
     {sql_escape(event.mechanism)},
