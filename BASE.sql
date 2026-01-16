@@ -1,6 +1,6 @@
 -- Создаём таблицу с уникальным ограничением сразу
-CREATE TABLE IF NOT EXISTS clicks (
-    id SERIAL PRIMARY KEY,          -- уникальный идентификатор
+CREATE TABLE clicks (
+    id SERIAL PRIMARY KEY,
     url TEXT,
     text TEXT,
     page_url TEXT,
@@ -9,6 +9,8 @@ CREATE TABLE IF NOT EXISTS clicks (
     timestamp TIMESTAMP NOT NULL,
     client_id TEXT,
     user_login TEXT,
+    timestamp_user TIMESTAMP,
+    user_name TEXT,
     CONSTRAINT unique_click UNIQUE (page_url, timestamp, client_id)
 );
 
